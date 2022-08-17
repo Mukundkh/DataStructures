@@ -2,13 +2,13 @@ package Arrays;
 
 public class MergeTwoSorted {
 
-    public static int[] mergeTwoSortedArrays(int arr1[], int arr2[]){
+    public static int[] mergeTwoSortedArrays(int arr1[], int arr2[], int arr3[]){
 
         int i = 0;
         int j = 0;
         int k = 0;
 
-        int arr3[] = new int[arr1.length + arr2.length];
+        //int arr3[] = new int[arr1.length + arr2.length];
 
         while(i < arr1.length && j < arr2.length){
             if (arr1[i] <= arr2[j]){
@@ -37,7 +37,8 @@ public class MergeTwoSorted {
     public static void main(String[] args) {
         int arr1[] = {0, 3, 5};
         int arr2[] = {1, 3, 5, 7};
-        int res[] = mergeTwoSortedArrays(arr1, arr2);
+        int arr3[] = new int[arr1.length + arr2.length];
+        int res[] = mergeTwoSortedArrays(arr1, arr2, arr3);
 
         for(int i: res){
             System.out.print(i + " ");
