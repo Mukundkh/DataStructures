@@ -9,7 +9,7 @@ public class MoveAllNegatives {
         }
     }
 
-    public static void moveAllNegatives(int input[]){
+    public static void moveAllNegativesBetter(int input[]){
 
         int left = 0;
         int right = input.length-1;
@@ -37,10 +37,31 @@ public class MoveAllNegatives {
         }
     }
 
-    public static void main(String[] args) {
-        int input[] = {-1, 2, 10, -2, 2, 19, -100};
-        moveAllNegatives(input);
-        print(input);
+    public static int[] moveAllNegatives(int input[]){
+
+        int len = input.length;
+        int new_input[] = new int[input.length];
+        int idx = 0;
+
+        for(int i=0; i<len; i++){
+            if(input[i] < 0){
+                new_input[idx] = input[i];
+                idx++;
+            }
+        }
+        for(int i=0; i<input.length; i++){
+            if(input[i] >= 0){
+                new_input[idx] = input[i];
+                idx++;
+            }
+        }
+        return new_input;
     }
 
+
+    public static void main(String[] args) {
+        int input[] = {-1, 2, 10, -2, 2, 19, -100};
+        int new_input[] = moveAllNegatives(input);
+        print(new_input);
+    }
 }
